@@ -5,9 +5,9 @@ import time
 
 import pylast
 
-DAYS_BACK = 14
-PREVIOUS_SCROBBLES = 'previous_scrobbles.txt'
-ITUNES_XML = os.environ.get('ITUNES_XML')
+DAYS_BACK = int(os.environ.get('DAYS_BACK', 14))
+PREVIOUS_SCROBBLES = os.environ.get('PREVIOUS_SCROBBLES', '/iTunes/previous_scrobbles.txt')
+ITUNES_XML = os.environ.get('ITUNES_XML', '/iTunes/iTunes Music Library.xml')
 
 LASTFM = pylast.LastFMNetwork(api_key=os.environ.get('LASTFM_APIKEY'),
                               api_secret=os.environ.get('LASTFM_APISECRET'),
